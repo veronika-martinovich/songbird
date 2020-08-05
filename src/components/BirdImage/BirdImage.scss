@@ -1,0 +1,8 @@
+@import "../../scss/constants.scss";
+
+.bird-img {
+  display: inline-block;
+  width: 200px;
+  height: 155px;
+  border-radius: $img-border-radius;
+}
