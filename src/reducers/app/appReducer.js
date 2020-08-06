@@ -1,6 +1,6 @@
 const defaultData = {
   currentCategory: 0,
-  isAnswerCorrect: false,
+  isAnswerCorrect: true,
 };
 
 export const appStateSelector = (state) => state.app;

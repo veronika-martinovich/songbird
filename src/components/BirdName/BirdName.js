@@ -1,8 +1,8 @@
 import React from "react";
 import "./BirdName.scss";
 
-export const BirdName = ({ name, isAnswerCorrect }) => {
+export const BirdName = ({ name, isAnswerCorrect, nameClass }) => {
   const text = isAnswerCorrect ? name : "******";
 
-  return <p>{text}</p>;
+  return <h3 className={`bird-name bird-name_${nameClass}`}>{text}</h3>;
 };

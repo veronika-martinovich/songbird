@@ -1,0 +1,17 @@
+@import "../../scss/constants.scss";
+
+.random-bird {
+  display: flex;
+  align-items: center;
+  background-color: $app-bg-color-light;
+  padding: 15px;
+  border-radius: $border-radius-block;
+}
+
+.random-bird__details-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 40px;
+  height: 155px;
+}

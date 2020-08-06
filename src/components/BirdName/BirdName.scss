@@ -1,1 +1,13 @@
 @import "../../scss/constants.scss";
+
+.bird-name {
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: $border;
+}
+
+.bird-name_random {
+  font-size: 32px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}

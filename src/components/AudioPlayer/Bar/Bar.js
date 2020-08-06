@@ -1,4 +1,5 @@
 import React from "react";
+import { getTimeFromSeconds } from "../../../utilities/getTimeFromSeconds";
 import "./Bar.scss";
 
 export const Bar = ({ duration, curTime, onTimeUpdate, audioClass }) => {
@@ -38,11 +39,13 @@ export const Bar = ({ duration, curTime, onTimeUpdate, audioClass }) => {
       >
         <span
           className="bar__knob"
-          style={{ left: `${curPercentage - 2}%` }}
+          style={{ left: `${curPercentage - 1}%` }}
         ></span>
       </div>
-      <span className="bar__time">{curTime}</span>
-      <span className="bar__time">{duration}</span>
+      <div className="bar__time-container">
+        <span className="bar__time">{getTimeFromSeconds(curTime)}</span>
+        <span className="bar__time">{getTimeFromSeconds(duration)}</span>
+      </div>
     </div>
   );
 };
