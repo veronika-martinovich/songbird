@@ -1,0 +1,16 @@
+.bar__progress {
+  position: relative;
+  width: 200px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.bar__knob {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(115, 115, 115);
+  top: -5px;
+}
