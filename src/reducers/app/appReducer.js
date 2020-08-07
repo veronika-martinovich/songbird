@@ -1,14 +1,20 @@
+import { SET_RANDOM_BIRD } from "./appActions";
+
 const defaultData = {
   currentCategory: 0,
-  isAnswerCorrect: true,
+  randomBird: null,
+  isAnswerCorrect: false,
 };
 
 export const appStateSelector = (state) => state.app;
 
 export const app = (state = defaultData, action) => {
   switch (action.type) {
-    /* case 'ADD_TODO':
-      return state.concat([action.text]) */
+    case SET_RANDOM_BIRD:
+      return {
+        ...state,
+        randomBird: action.payload,
+      };
     default:
       return state;
   }

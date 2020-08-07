@@ -1,0 +1,43 @@
+@import "../../scss/constants.scss";
+
+.birds-list__item {
+  list-style-type: none;
+  height: 50px;
+  width: 48%;
+  background-color: $app-bg-color-light;
+  border: $border;
+  border-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+
+  &:first-child {
+    border-top-left-radius: $border-radius-block;
+    border-top-right-radius: $border-radius-block;
+  }
+
+  &:last-child {
+    border-bottom: $border;
+    border-bottom-left-radius: $border-radius-block;
+    border-bottom-right-radius: $border-radius-block;
+  }
+}
+
+.answer-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $details-color-dark;
+  margin-right: 15px;
+
+  &_error {
+    background-color: $error-color;
+  }
+
+  &_success {
+    background-color: $primary-color-light;
+  }
+}
+

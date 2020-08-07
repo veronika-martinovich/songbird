@@ -29,7 +29,7 @@ export const useAudioPlayer = (audioClass) => {
       audio.removeEventListener("loadeddata", setAudioData);
       audio.removeEventListener("timeupdate", setAudioTime);
     };
-  });
+  }, [audioClass, playing, clickedTime, curTime]);
 
   return {
     curTime,
