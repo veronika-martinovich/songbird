@@ -28,12 +28,12 @@ export const RandomBird = () => {
     <div className="random-bird">
       <BirdImage
         imageSrc={randomBird.image}
-        isAnswerCorrect={isAnswerCorrect}
+        isImageDisplayed={isAnswerCorrect}
       />
       <div className="random-bird__details-container">
         <BirdName
           name={randomBird.name}
-          isAnswerCorrect={isAnswerCorrect}
+          isNameDisplayed={isAnswerCorrect}
           nameClass={classes.random}
         />
         <AudioPlayer audioSrc={randomBird.audio} audioClass={classes.random} />

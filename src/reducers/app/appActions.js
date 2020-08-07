@@ -16,3 +16,8 @@ export const actionSetErrorGameResult = (points) => ({
   payload: points,
 });
 
+export const SET_CURRENT_BIRD = "SET_CURRENT_BIRD";
+export const actionSetCurrentBird = (bird) => ({
+  type: SET_CURRENT_BIRD,
+  payload: bird,
+});

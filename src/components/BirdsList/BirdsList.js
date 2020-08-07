@@ -6,6 +6,7 @@ import { birdsSelector } from "../../reducers/birds/birdsReducer";
 import {
   actionSetSuccessGameResult,
   actionSetErrorGameResult,
+  actionSetCurrentBird,
 } from "../../reducers/app/appActions";
 
 export const BirdsList = () => {
@@ -21,12 +22,16 @@ export const BirdsList = () => {
   const dispatch = useDispatch();
 
   const handleBirdItemClick = (e) => {
-    if (e.target.textContent === randomBird.name && !isAnswerCorrect) {
+    const curBirdId = Number(e.currentTarget.dataset.birdId);
+    const curBird = birds.find((item) => item.id === curBirdId);
+    dispatch(actionSetCurrentBird(curBird));
+    
+    if (curBirdId === randomBird.id && !isAnswerCorrect) {
       dispatch(actionSetSuccessGameResult(totalScore + currentPoints));
-      e.target.firstChild.classList.add("answer-indicator_success");
-    } else if (e.target.textContent !== randomBird.name && !isAnswerCorrect) {
+      e.currentTarget.firstChild.classList.add("answer-indicator_success");
+    } else if (curBirdId !== randomBird.id && !isAnswerCorrect) {
       dispatch(actionSetErrorGameResult(currentPoints - 1));
-      e.target.firstChild.classList.add("answer-indicator_error");
+      e.currentTarget.firstChild.classList.add("answer-indicator_error");
     }
   };
 
@@ -35,6 +40,7 @@ export const BirdsList = () => {
       {birds.map((item) => (
         <li
           key={item.id}
+          data-bird-id={item.id}
           className="birds-list__item"
           onClick={handleBirdItemClick}
         >

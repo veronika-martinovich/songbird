@@ -1,1 +1,1 @@
-export const classes = { random: "random", selected: "selected" };
+export const classes = { random: "random", current: "current" };

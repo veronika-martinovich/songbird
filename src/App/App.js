@@ -1,8 +1,9 @@
 import React from "react";
+import "./App.scss";
 import { Header } from "../components/Header/Header";
 import { RandomBird } from "../components/RandomBird/RandomBird";
 import { BirdsList } from "../components/BirdsList/BirdsList";
-import { BirdInfo } from "../components/BirdInfo/BirdInfo";
+import { CurrentBird } from "../components/CurrentBird/CurrentBird";
 
 const App = () => {
   return (
@@ -10,8 +11,10 @@ const App = () => {
       <Header />
       <main className="main">
         <RandomBird />
-        <BirdsList />
-        <BirdInfo />
+        <div className="birds-list-wrapper">
+          <BirdsList />
+          <CurrentBird />
+        </div>
       </main>
     </div>
   );

@@ -1,9 +1,12 @@
 @import "../../scss/constants.scss";
 
+.birds-list {
+  width: 540px;
+}
+
 .birds-list__item {
   list-style-type: none;
   height: 50px;
-  width: 48%;
   background-color: $app-bg-color-light;
   border: $border;
   border-bottom: 0;
