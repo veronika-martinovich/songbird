@@ -22,6 +22,10 @@
     border-bottom-left-radius: $border-radius-block;
     border-bottom-right-radius: $border-radius-block;
   }
+
+  &:hover {
+    background-color: $details-color-light;
+  }
 }
 
 .answer-indicator {

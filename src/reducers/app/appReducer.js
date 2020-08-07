@@ -1,9 +1,15 @@
-import { SET_RANDOM_BIRD } from "./appActions";
+import {
+  SET_RANDOM_BIRD,
+  SET_SUCCESS_GAME_RESULTS,
+  SET_ERROR_GAME_RESULTS,
+} from "./appActions";
 
 const defaultData = {
   currentCategory: 0,
   randomBird: null,
   isAnswerCorrect: false,
+  totalScore: 0,
+  currentPoints: 5,
 };
 
 export const appStateSelector = (state) => state.app;
@@ -15,7 +21,19 @@ export const app = (state = defaultData, action) => {
         ...state,
         randomBird: action.payload,
       };
+    case SET_SUCCESS_GAME_RESULTS:
+      return {
+        ...state,
+        isAnswerCorrect: true,
+        totalScore: action.payload,
+      };
+    case SET_ERROR_GAME_RESULTS:
+      return {
+        ...state,
+        currentPoints: action.payload,
+      };
     default:
       return state;
   }
 };
+

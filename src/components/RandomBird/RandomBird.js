@@ -21,7 +21,7 @@ export const RandomBird = () => {
 
   useEffect(() => {
     dispatch(actionSetRandomBird(birds[randomBirdIndex]));
-  }, [randomBirdIndex, dispatch, birds]);
+  }, []);
 
   if (!randomBird) return null;
   return (
