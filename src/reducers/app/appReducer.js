@@ -2,7 +2,10 @@ import {
   SET_RANDOM_BIRD,
   SET_SUCCESS_GAME_RESULTS,
   SET_ERROR_GAME_RESULTS,
-  SET_CURRENT_BIRD
+  SET_CURRENT_BIRD,
+  SET_CURRENT_CATEGORY,
+  SET_IS_ANSWER_CORRECT,
+  UPDATE_CURRENT_POINTS,
 } from "./appActions";
 
 const defaultData = {
@@ -11,7 +14,7 @@ const defaultData = {
   currentBird: null,
   isAnswerCorrect: false,
   totalScore: 0,
-  currentPoints: 5,
+  currentPoints: null,
 };
 
 export const appStateSelector = (state) => state.app;
@@ -38,6 +41,21 @@ export const app = (state = defaultData, action) => {
       return {
         ...state,
         currentBird: action.payload,
+      };
+    case SET_CURRENT_CATEGORY:
+      return {
+        ...state,
+        currentCategory: action.payload,
+      };
+    case UPDATE_CURRENT_POINTS:
+      return {
+        ...state,
+        currentPoints: action.payload,
+      };
+    case SET_IS_ANSWER_CORRECT:
+      return {
+        ...state,
+        isAnswerCorrect: action.payload,
       };
     default:
       return state;

@@ -6,8 +6,11 @@ import { AudioPlayer } from "../AudioPlayer/AudioPlayer";
 import { appStateSelector } from "../../reducers/app/appReducer";
 import { birdsSelector } from "../../reducers/birds/birdsReducer";
 import { getRandomInteger } from "../../utilities/getRandomInteger";
-import { classes } from "../../App/classes";
-import { actionSetRandomBird } from "../../reducers/app/appActions";
+import { classes, MAX_POINTS } from "../../App/constants";
+import {
+  actionSetRandomBird,
+  actionUpdateCurrentPoints,
+} from "../../reducers/app/appActions";
 import "./RandomBird.scss";
 
 export const RandomBird = () => {
@@ -16,12 +19,13 @@ export const RandomBird = () => {
   );
   const { birdsData } = useSelector(birdsSelector);
   const birds = birdsData[currentCategory];
-  const randomBirdIndex = getRandomInteger(0, birds.length - 1);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const randomBirdIndex = getRandomInteger(0, birds.length - 1);
     dispatch(actionSetRandomBird(birds[randomBirdIndex]));
-  }, []);
+    dispatch(actionUpdateCurrentPoints(MAX_POINTS));
+  }, [currentCategory]);
 
   if (!randomBird) return null;
   return (

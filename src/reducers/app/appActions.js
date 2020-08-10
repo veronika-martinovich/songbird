@@ -21,3 +21,21 @@ export const actionSetCurrentBird = (bird) => ({
   type: SET_CURRENT_BIRD,
   payload: bird,
 });
+
+export const SET_CURRENT_CATEGORY = "SET_CURRENT_CATEGORY";
+export const actionSetCurrentCategory = (category) => ({
+  type: SET_CURRENT_CATEGORY,
+  payload: category,
+});
+
+export const SET_IS_ANSWER_CORRECT = "SET_IS_ANSWER_CORRECT";
+export const actionSetIsAnswerCorrect = (flag) => ({
+  type: SET_IS_ANSWER_CORRECT,
+  payload: flag,
+});
+
+export const UPDATE_CURRENT_POINTS = "UPDATE_CURRENT_POINTS";
+export const actionUpdateCurrentPoints = (points) => ({
+  type: UPDATE_CURRENT_POINTS,
+  payload: points,
+});

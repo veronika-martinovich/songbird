@@ -7,7 +7,7 @@ import { AudioPlayer } from "../AudioPlayer/AudioPlayer";
 import { BirdDescription } from "../BirdDescription/BirdDescription";
 import { BirdSpecies } from "../BirdSpecies/BirdSpecies";
 import { appStateSelector } from "../../reducers/app/appReducer";
-import { classes } from "../../App/classes";
+import { classes } from "../../App/constants";
 
 export const CurrentBird = () => {
   const { currentBird } = useSelector(appStateSelector);
