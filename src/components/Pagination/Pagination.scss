@@ -18,7 +18,7 @@
   list-style-type: none;
   background-color: $primary-color;
 
-  &:hover {
+  &_active {
     background-color: $primary-color-light;
   }
 

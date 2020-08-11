@@ -7,7 +7,7 @@ import { appStateSelector } from "../../reducers/app/appReducer";
 import "./Header.scss";
 
 export const Header = () => {
-  const { totalScore } = useSelector(appStateSelector);
+  const { totalScore, currentCategory } = useSelector(appStateSelector);
 
   return (
     <header className="header">
@@ -15,8 +15,7 @@ export const Header = () => {
         <Logo />
         <Score score={totalScore} />
       </div>
-
-      <Pagination />
+      <Pagination currentPageId={currentCategory}/>
     </header>
   );
 };
