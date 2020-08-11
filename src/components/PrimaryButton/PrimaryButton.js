@@ -1,7 +1,7 @@
 import React from "react";
-import "./NextLevelButton.scss";
+import "./PrimaryButton.scss";
 
-export const NextLevelButton = ({ isButtonActive, onNextLevelClick }) => {
+export const PrimaryButton = ({ isButtonActive, onNextLevelClick }) => {
   return (
     <button
       type="button"

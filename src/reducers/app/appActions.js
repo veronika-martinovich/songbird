@@ -39,3 +39,9 @@ export const actionUpdateCurrentPoints = (points) => ({
   type: UPDATE_CURRENT_POINTS,
   payload: points,
 });
+
+export const SET_IS_QUIZE_FINISHED = "SET_IS_QUIZE_FINISHED";
+export const actionSetIsQuizeFinished = (flag) => ({
+  type: SET_IS_QUIZE_FINISHED,
+  payload: flag,
+});

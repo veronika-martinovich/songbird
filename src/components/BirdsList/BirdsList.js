@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import "./BirdsList.scss";
 import { appStateSelector } from "../../reducers/app/appReducer";
 import { birdsSelector } from "../../reducers/birds/birdsReducer";
@@ -15,7 +15,6 @@ export const BirdsList = () => {
   const { birdsData } = useSelector(birdsSelector);
   const birds = birdsData[currentCategory];
   const audioElement = useRef(null);
-  //const dispatch = useDispatch();
 
   const handleBirdItemClick = (e) => {
     birdItemClickHandler(

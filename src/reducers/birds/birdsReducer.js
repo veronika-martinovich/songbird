@@ -307,8 +307,6 @@ export const birdsSelector = (state) => state.birds;
 
 export const birds = (state = defaultData, action) => {
   switch (action.type) {
-    /* case 'ADD_TODO':
-      return state.concat([action.text]) */
     default:
       return state;
   }

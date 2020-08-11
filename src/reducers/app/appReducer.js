@@ -6,6 +6,7 @@ import {
   SET_CURRENT_CATEGORY,
   SET_IS_ANSWER_CORRECT,
   UPDATE_CURRENT_POINTS,
+  SET_IS_QUIZE_FINISHED,
 } from "./appActions";
 
 const defaultData = {
@@ -15,6 +16,7 @@ const defaultData = {
   isAnswerCorrect: false,
   totalScore: 0,
   currentPoints: null,
+  isQuizeFinished: false,
 };
 
 export const appStateSelector = (state) => state.app;
@@ -56,6 +58,11 @@ export const app = (state = defaultData, action) => {
       return {
         ...state,
         isAnswerCorrect: action.payload,
+      };
+    case SET_IS_QUIZE_FINISHED:
+      return {
+        ...state,
+        isQuizeFinished: action.payload,
       };
     default:
       return state;

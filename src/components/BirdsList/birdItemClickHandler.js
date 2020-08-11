@@ -3,7 +3,6 @@ import {
   actionSetSuccessGameResult,
   actionSetErrorGameResult,
   actionSetCurrentBird,
-  actionSetCurrentCategory,
 } from "../../reducers/app/appActions";
 import errorSound from "../../assets/error_sound.mp3";
 import successSound from "../../assets/success_sound.mp3";
