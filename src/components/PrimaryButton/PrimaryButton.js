@@ -1,16 +1,22 @@
 import React from "react";
 import "./PrimaryButton.scss";
 
-export const PrimaryButton = ({ isButtonActive, onNextLevelClick }) => {
+export const PrimaryButton = ({
+  isButtonActive,
+  onPrimaryButtonClick,
+  buttonName,
+}) => {
   return (
     <button
       type="button"
       className={
-        isButtonActive ? "next-level-button next-level-button_active" : "next-level-button"
+        isButtonActive
+          ? "primary-button primary-button_active"
+          : "primary-button"
       }
-      onClick={() => onNextLevelClick()}
+      onClick={() => onPrimaryButtonClick()}
     >
-      Следующий уровень
+      {buttonName}
     </button>
   );
 };

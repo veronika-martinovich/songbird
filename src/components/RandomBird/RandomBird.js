@@ -7,17 +7,13 @@ import { appStateSelector } from "../../reducers/app/appReducer";
 import { birdsSelector } from "../../reducers/birds/birdsReducer";
 import { getRandomInteger } from "../../utilities/getRandomInteger";
 import { classes, MAX_POINTS } from "../../App/constants";
-import {
-  actionSetRandomBird,
-  actionUpdateCurrentPoints,
-} from "../../reducers/app/appActions";
+import { actionUpdateCurrentPoints } from "../../reducers/app/appActions";
+import { actionSetRandomBird } from "../../reducers/birds/birdsActions";
 import "./RandomBird.scss";
 
 export const RandomBird = () => {
-  const { currentCategory, isAnswerCorrect, randomBird } = useSelector(
-    appStateSelector
-  );
-  const { birdsData } = useSelector(birdsSelector);
+  const { isAnswerCorrect } = useSelector(appStateSelector);
+  const { birdsData, currentCategory, randomBird } = useSelector(birdsSelector);
   const birds = birdsData[currentCategory];
   const dispatch = useDispatch();
 
@@ -25,6 +21,7 @@ export const RandomBird = () => {
     const randomBirdIndex = getRandomInteger(0, birds.length - 1);
     dispatch(actionSetRandomBird(birds[randomBirdIndex]));
     dispatch(actionUpdateCurrentPoints(MAX_POINTS));
+    console.log(birds[randomBirdIndex].name);
   }, [currentCategory]);
 
   if (!randomBird) return null;

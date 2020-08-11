@@ -4,15 +4,12 @@ import "./BirdsList.scss";
 import { appStateSelector } from "../../reducers/app/appReducer";
 import { birdsSelector } from "../../reducers/birds/birdsReducer";
 import { birdItemClickHandler } from "./birdItemClickHandler";
+
 export const BirdsList = () => {
-  const {
-    currentCategory,
-    randomBird,
-    totalScore,
-    currentPoints,
-    isAnswerCorrect,
-  } = useSelector(appStateSelector);
-  const { birdsData } = useSelector(birdsSelector);
+  const { totalScore, currentPoints, isAnswerCorrect } = useSelector(
+    appStateSelector
+  );
+  const { birdsData, currentCategory, randomBird } = useSelector(birdsSelector);
   const birds = birdsData[currentCategory];
   const audioElement = useRef(null);
 
@@ -24,7 +21,7 @@ export const BirdsList = () => {
       totalScore,
       currentPoints,
       isAnswerCorrect,
-      audioElement,
+      audioElement
     );
   };
 

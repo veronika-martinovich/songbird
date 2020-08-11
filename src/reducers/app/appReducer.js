@@ -1,18 +1,12 @@
 import {
-  SET_RANDOM_BIRD,
-  SET_SUCCESS_GAME_RESULTS,
-  SET_ERROR_GAME_RESULTS,
-  SET_CURRENT_BIRD,
-  SET_CURRENT_CATEGORY,
+  UPDATE_TOTAL_SCORE,
   SET_IS_ANSWER_CORRECT,
   UPDATE_CURRENT_POINTS,
   SET_IS_QUIZE_FINISHED,
+  UPDATE_DEFAULT_APP_DATA,
 } from "./appActions";
 
 const defaultData = {
-  currentCategory: 0,
-  randomBird: null,
-  currentBird: null,
   isAnswerCorrect: false,
   totalScore: 0,
   currentPoints: null,
@@ -23,31 +17,10 @@ export const appStateSelector = (state) => state.app;
 
 export const app = (state = defaultData, action) => {
   switch (action.type) {
-    case SET_RANDOM_BIRD:
+    case UPDATE_TOTAL_SCORE:
       return {
         ...state,
-        randomBird: action.payload,
-      };
-    case SET_SUCCESS_GAME_RESULTS:
-      return {
-        ...state,
-        isAnswerCorrect: true,
         totalScore: action.payload,
-      };
-    case SET_ERROR_GAME_RESULTS:
-      return {
-        ...state,
-        currentPoints: action.payload,
-      };
-    case SET_CURRENT_BIRD:
-      return {
-        ...state,
-        currentBird: action.payload,
-      };
-    case SET_CURRENT_CATEGORY:
-      return {
-        ...state,
-        currentCategory: action.payload,
       };
     case UPDATE_CURRENT_POINTS:
       return {
@@ -64,6 +37,15 @@ export const app = (state = defaultData, action) => {
         ...state,
         isQuizeFinished: action.payload,
       };
+    case UPDATE_DEFAULT_APP_DATA:
+      return {
+        ...state,
+        isAnswerCorrect: false,
+        totalScore: 0,
+        currentPoints: null,
+        isQuizeFinished: false,
+      };
+
     default:
       return state;
   }

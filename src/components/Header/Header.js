@@ -4,10 +4,12 @@ import { Logo } from "../Logo/Logo";
 import { Score } from "../Score/Score";
 import { Pagination } from "../Pagination/Pagination";
 import { appStateSelector } from "../../reducers/app/appReducer";
+import { birdsSelector } from "../../reducers/birds/birdsReducer";
 import "./Header.scss";
 
 export const Header = () => {
-  const { totalScore, currentCategory } = useSelector(appStateSelector);
+  const { totalScore } = useSelector(appStateSelector);
+  const { currentCategory } = useSelector(birdsSelector);
 
   return (
     <header className="header">
@@ -15,7 +17,7 @@ export const Header = () => {
         <Logo />
         <Score score={totalScore} />
       </div>
-      <Pagination currentPageId={currentCategory}/>
+      <Pagination currentPageId={currentCategory} />
     </header>
   );
 };
