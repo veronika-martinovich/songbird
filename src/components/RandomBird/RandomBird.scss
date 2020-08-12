@@ -1,4 +1,5 @@
 @import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
 
 .random-bird {
   display: flex;
@@ -6,6 +7,10 @@
   background-color: $app-bg-color-light;
   padding: 15px;
   border-radius: $border-radius-block;
+
+  @include media-mobile-small {
+    flex-direction: column;
+  }
 }
 
 .random-bird__details-container {
@@ -14,4 +19,9 @@
   flex-grow: 1;
   margin-left: 40px;
   height: 155px;
+
+  @include media-mobile-small {
+    width: 100%;
+    margin-left: 0px;
+  }
 }

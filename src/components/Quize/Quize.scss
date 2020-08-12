@@ -1,7 +1,13 @@
+@import "../../scss/mixins.scss";
+
 .birds-list-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 1110px;
+  width: 100%;
   padding: 20px 0px;
+
+  @include media-mobile {
+    flex-direction: column;
+  }
 }

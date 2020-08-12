@@ -1,4 +1,5 @@
 @import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
 
 .current-bird {
   width: 540px;
@@ -7,6 +8,19 @@
   border: $border;
   padding: 15px;
   border-radius: $border-radius-block;
+
+  @include media-laptop {
+    width: 450px;
+  }
+
+  @include media-laptop {
+    width: 330px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    min-height: 95px;
+  }
 }
 
 .current-bird__container {
@@ -14,8 +28,17 @@
   width: 100%;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  @include media-mobile-small {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .current-bird__info-container {
   width: 265px;
+  
+  @include media-mobile-small {
+    width: 100%;
+  }
 }

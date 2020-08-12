@@ -2,16 +2,18 @@
 
 .pagination {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   width: 100%;
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 20px;
+  border-radius: $border-radius;
+  overflow: hidden;
 }
 
 .pagination__item {
-  display: block;
-  width: 185px;
+  flex: auto;
+  width: 175px;
   padding-top: 7px;
   padding-bottom: 7px;
   text-align: center;
@@ -20,15 +22,5 @@
 
   &_active {
     background-color: $primary-color-light;
-  }
-
-  &:first-child {
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-  }
-
-  &:last-child {
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
   }
 }

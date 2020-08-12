@@ -1,4 +1,5 @@
 @import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
 
 .bird-species {
   font-weight: 400;
@@ -7,4 +8,8 @@
   border-bottom: $border;
   margin-top: 7px;
   margin-bottom: 20px;
+
+  @include media-mobile-small {
+    text-align: center;
+  }
 }

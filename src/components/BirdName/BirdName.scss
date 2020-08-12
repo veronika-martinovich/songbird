@@ -1,9 +1,14 @@
 @import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
 
 .bird-name {
   font-weight: 500;
   padding-bottom: 10px;
   border-bottom: $border;
+  
+  @include media-mobile-small {
+    text-align: center;
+  }
 }
 
 .bird-name_random {
