@@ -1,4 +1,5 @@
 @import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
 
 .result {
   width: 100%;
@@ -12,6 +13,11 @@
 .result__title {
   font-size: 72px;
   margin-bottom: 20px;
+
+  
+  @include media-mobile-small {
+    font-size: 36px;
+  }
 }
 
 .result__text {
