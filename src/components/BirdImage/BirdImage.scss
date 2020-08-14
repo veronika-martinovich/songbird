@@ -1,0 +1,14 @@
+@import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
+
+.bird-img {
+  display: inline-block;
+  width: 200px;
+  height: 155px;
+  border-radius: $img-border-radius;
+  object-fit: cover;
+
+  @include media-mobile-small {
+    margin-bottom: 30px;
+  }
+}

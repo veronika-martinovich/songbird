@@ -1,0 +1,23 @@
+@import "../../scss/constants.scss";
+@import "../../scss/mixins.scss";
+
+.bird-name {
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: $border;
+  
+  @include media-mobile-small {
+    text-align: center;
+  }
+}
+
+.bird-name_random {
+  font-size: 32px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.bird-name_current {
+  font-size: 22px;
+  margin-bottom: 0px;
+}

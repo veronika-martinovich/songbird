@@ -1,0 +1,26 @@
+@import "../../scss/constants.scss";
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.pagination__item {
+  flex: auto;
+  width: 175px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  list-style-type: none;
+  background-color: $primary-color;
+
+  &_active {
+    background-color: $primary-color-light;
+  }
+}

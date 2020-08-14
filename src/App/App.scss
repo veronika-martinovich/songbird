@@ -1,0 +1,28 @@
+@import "../scss/mixins.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  max-width: 1110px;
+  margin: 0 auto;
+
+  @include media-laptop {
+    max-width: 930px;
+  }
+
+  @include media-laptop-small {
+    max-width: 690px;
+  }
+
+  @include media-mobile {
+    max-width: 510px;
+  }
+
+  @include media-mobile-small {
+    padding: 0px 15px;
+  }
+}

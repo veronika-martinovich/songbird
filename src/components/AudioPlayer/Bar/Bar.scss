@@ -1,0 +1,33 @@
+.player__bar {
+  margin-top: 18px;
+  margin-left: 20px;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bar__progress {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.bar__knob {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(115, 115, 115);
+  top: -5px;
+}
+
+.bar__time-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+}

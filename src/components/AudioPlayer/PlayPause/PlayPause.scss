@@ -1,0 +1,33 @@
+@import "../../../scss/constants.scss";
+
+.player__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  border: 2px solid $primary-color-light;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.player__indicator_off {
+  display: block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid $primary-color-light;
+  border-radius: 2px;
+  margin-left: 3px;
+}
+
+.player__indicator_on {
+  display: block; 
+  width: 13px;
+  height: 15px;
+  border-left: 4px solid $primary-color-light;
+  border-right: 4px solid $primary-color-light;
+}
