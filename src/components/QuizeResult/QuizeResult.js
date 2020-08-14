@@ -5,11 +5,13 @@ import { actionUpdateDefaultAppData } from "../../reducers/app/appActions";
 import { actionUpdateDefaultBirdsData } from "../../reducers/birds/birdsActions";
 import { appStateSelector } from "../../reducers/app/appReducer";
 import { MAX_SCORE } from "../../App/constants";
+import Ornithologist from "../../assets/ornithologist.gif";
 import "./QuizeResult.scss";
 
 export const QuizeResult = () => {
   const { totalScore } = useSelector(appStateSelector);
   const dispatch = useDispatch();
+  const isResultMax = totalScore === MAX_SCORE ? true : false;
 
   const handleAgainClick = () => {
     dispatch(actionUpdateDefaultAppData());
@@ -18,17 +20,26 @@ export const QuizeResult = () => {
 
   return (
     <div className="result">
-      <p className="result__title">Поздравляем!</p>
+      <p className="result__title">
+        {isResultMax ? "Орнитолог от Бога!" : "Поздравляем!"}
+      </p>
+      {isResultMax && (
+        <img src={Ornithologist} alt="ornithologist" className="result__img" />
+      )}
       <p className="result__text">
-        Вы прошли викторину и набрали {totalScore} из {MAX_SCORE} возможных
-        баллов.
+        {isResultMax
+          ? "Вы набрали максимальное количество баллов!"
+          : `Вы прошли викторину и набрали ${totalScore} из ${MAX_SCORE} возможных
+        баллов.`}
       </p>
       <hr className="result__line" />
-      <PrimaryButton
-        onPrimaryButtonClick={handleAgainClick}
-        isButtonActive={true}
-        buttonName="Попробовать еще раз!"
-      />
+      {!isResultMax && (
+        <PrimaryButton
+          onPrimaryButtonClick={handleAgainClick}
+          isButtonActive={true}
+          buttonName="Попробовать еще раз!"
+        />
+      )}
     </div>
   );
 };

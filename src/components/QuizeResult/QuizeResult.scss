@@ -8,14 +8,17 @@
   border-radius: $border-radius-block;  
   text-align: center;
   font-weight: 300;
+
+  @include media-mobile {
+    padding: 40px 15px;
+  }
 }
 
 .result__title {
   font-size: 72px;
   margin-bottom: 20px;
-
   
-  @include media-mobile-small {
+  @include media-mobile {
     font-size: 36px;
   }
 }
@@ -29,4 +32,14 @@
   margin-bottom: 40px;
   border: 0;
   border-top: 1.5px solid #2b2b2b;
+}
+
+.result__img {
+  width: 300px;
+  height: 300px;
+    
+  @include media-mobile-small {
+    width: 200px;
+    height: 200px;
+  }
 }
