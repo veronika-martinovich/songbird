@@ -22,6 +22,7 @@ export const RandomBird = () => {
     dispatch(actionSetRandomBird(birds[randomBirdIndex]));
     dispatch(actionUpdateCurrentPoints(MAX_POINTS));
     console.log(birds[randomBirdIndex].name);
+    // eslint-disable-next-line
   }, [currentCategory]);
 
   if (!randomBird) return null;

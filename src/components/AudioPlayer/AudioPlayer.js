@@ -26,6 +26,7 @@ export const AudioPlayer = ({ audioSrc, audioClass }) => {
 
   useEffect(() => {
     if (isAnswerCorrect) setPlaying(false);
+    // eslint-disable-next-line
   }, [isAnswerCorrect]);
 
   if (!audioSrc) return null;
